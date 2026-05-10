@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background 0.3s ease;
+}
+
+body.dark-mode {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 30px;
+    text-align: center;
+    min-width: 300px;
+}
+
+body.dark-mode .container {
+    background: rgba(30, 30, 46, 0.95);
+    color: #eee;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#counter {
+    font-size: 6rem;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 20px;
+}
+
+body.dark-mode #counter {
+    background: #1e1e2e;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 40px;
+    margin: 5px;
+}
+
+#decreaseBtn { background: #ff7675; color: white; }
+#resetBtn { background: #74b9ff; color: white; }
+#increaseBtn { background: #55efc4; color: #2d3436; }
+
+.step-control {
+    margin: 15px 0;
+}
+
+.step-control input {
+    padding: 5px 10px;
+    width: 70px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+#darkModeBtn {
+    background: #2d3436;
+    color: white;
+    margin-top: 10px;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.counter-bounce {
+    animation: bounce 0.2s ease;
+}
