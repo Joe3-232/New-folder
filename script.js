@@ -56,12 +56,17 @@ count = 0;
 }
 
 decreaseBtn.addEventListener('click', decrease);
+
 resetBtn.addEventListener('click', reset);
+
                 increaseBtn.addEventListener('click', increase);
 
     stepInput.addEventListener('change', (e) => {
+
   let val = parseInt(e.target.value);
+
         if (isNaN(val) || val < 1) {
+          
        currentStep = 1;
 stepInput.value = 1;
                             } else if (val > 100) {
