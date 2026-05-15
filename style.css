@@ -9,7 +9,6 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: flex;
     justify-content: center;
-    
     align-items: center;
     min-height: 100vh;
     transition: background 0.3s ease;
@@ -22,10 +21,12 @@ body.dark-mode {
 .container {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     text-align: center;
-    min-width: 300px;
+    min-width: 350px;
+    transition: all 0.3s ease;
 }
 
 body.dark-mode .container {
@@ -36,51 +37,112 @@ body.dark-mode .container {
 h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 #counter {
-    font-size: 6rem;
+    font-size: 8rem;
     font-weight: bold;
     margin: 20px 0;
-    padding: 15px;
+    padding: 20px;
     background: #f8f9fa;
     border-radius: 20px;
+    transition: all 0.2s ease;
 }
 
 body.dark-mode #counter {
     background: #1e1e2e;
+    color: #eee;
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: bold;
+.buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
     border: none;
-    border-radius: 40px;
-    margin: 5px;
+    border-radius: 50px;
+    transition: all 0.2s ease;
 }
 
-#decreaseBtn { background: #ff7675; color: white; }
-#resetBtn { background: #74b9ff; color: white; }
-#increaseBtn { background: #55efc4; color: #2d3436; }
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.decrease {
+    background: #ff7675;
+    color: white;
+}
+
+.reset {
+    background: #74b9ff;
+    color: white;
+}
+
+.increase {
+    background: #55efc4;
+    color: #2d3436;
+}
 
 .step-control {
-    margin: 15px 0;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.step-control label {
+    font-weight: 600;
 }
 
 .step-control input {
-    padding: 5px 10px;
-    width: 70px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    width: 80px;
     text-align: center;
+    border: 2px solid #ddd;
     border-radius: 10px;
-    border: 1px solid #cccccc80;
+    background: white;
 }
 
-#darkModeBtn {
+body.dark-mode .step-control input {
+    background: #2d2d3a;
+    color: white;
+    border-color: #555;
+}
+
+.dark-mode-btn {
     background: #2d3436;
     color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.2s;
     margin-top: 10px;
+}
+
+.dark-mode-btn:hover {
+    background: #1e272e;
+    transform: scale(1.05);
 }
 
 @keyframes bounce {
@@ -89,5 +151,5 @@ button {
 }
 
 .counter-bounce {
-    animation: bounce 0.2s ease;
+    animation: bounce 0.3s ease;
 }
